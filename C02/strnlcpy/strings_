@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   strings.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iratier- <iratier-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/09 09:50:48 by jortiz-f          #+#    #+#             */
+/*   Updated: 2023/11/09 14:25:23 by iratier-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include<stdio.h>
+#include<strings.h>
+#include<unistd.h>
+
+int main ()
+{
+	char	a[200] = "glhkljhñlkhlkhñlkhñkñhñhñkh";
+	char	b[] = "abcd";
+	int		cont = -1;
+	int 	size = 14;
+
+//	a = "1234567890";		// NO SE PUEDE DECLARAR COMO CHAR *(NAME)
+//	b = "abcdekgjggkkfj";	// PARA EL USO DE STRCPY
+
+	printf("a=%s\n", a);
+	printf("b=%s\n\n\n", b);
+//	strcpy (a, b);
+//	strncpy(a, b, size);		// SI EL SIZE ES MAYOR QUE LA CADENA RELLENA CON \N
+	strlcpy(a, b, size);		// GUARDA EL ÚLTIMO CARACTER PARA \n
+	printf("\n\na=%s\n", a);
+	printf("b=%s\n", b);
+	while (++cont <= size)
+	{
+		write (1, &a[cont], 1);
+	}
+
+	
+	return 0;
+}
