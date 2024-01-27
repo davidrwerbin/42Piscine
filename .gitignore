@@ -1,0 +1,9 @@
+# Ignorar todo
+/*
+
+# Excepto las carpetas que comienzan con 'ex'
+!/ex*/
+
+# Ignorar todos los archivos en las carpetas que comienzan con 'e' excepto los archivos con extensión '.c'
+/ex*/*
+!/ex*/*.c
